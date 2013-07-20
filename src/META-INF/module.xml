@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<root>
+    <module jar="org-iesapp-modules-mensajesup.jar" class="org.iesapp.modules.mensajesup.MensajesUPModule" autoStart="onDemand" multipleInstance="no" closable="yes">
+        <deamons>
+            <deamon class="org.iesapp.modules.mensajesup.MensajesupDeamon" timeInMillis="60000" showMessage="yes" activateIcon="yes"  activateModule="no" enabled="false"/>
+	</deamons>
+		
+        <anchor location="menu" parentId="jMenuModules"/>
+        <anchor location="toolbar" parentId="jToolBarModules"/>
+        <display location="topwindow" parentId="center"/>
+        <bundle>
+            <locale key="title" value="ca"><![CDATA[Missatges a PDAs]]></locale>
+            <locale key="title" value="es"><![CDATA[Mensajes a PDAs]]></locale>
+            <locale key="title" value="default"><![CDATA[PDA Messages]]></locale>
+            <locale key="description" value="default"><![CDATA[This module allows to send messages to PDAs]]></locale>
+        </bundle>
+        <initialization>
+             <parameter key="mensajesup.maxlength" type="Integer">
+                 <value><![CDATA[300]]></value>
+                 <description><![CDATA[Max allowed length when writing messages]]></description>
+             </parameter>
+        </initialization>   
+        <metaINF author="Josep Mulet (c) 2012" version="1.4" dependencies=""/>
+     </module>    
+</root>
