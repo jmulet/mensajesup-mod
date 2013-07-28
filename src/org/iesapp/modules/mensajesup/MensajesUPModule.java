@@ -22,6 +22,7 @@ import java.util.logging.Logger;
 import javax.swing.DefaultCellEditor;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JFileChooser;
@@ -52,6 +53,7 @@ import org.iesapp.framework.table.MyIconButtonRenderer;
 import org.iesapp.framework.table.MyIconLabelRenderer;
 import org.iesapp.framework.table.TextAreaRenderer;
 import org.iesapp.framework.util.CoreCfg;
+import org.iesapp.framework.util.IconUtils;
 import org.iesapp.util.DataCtrl;
 
 /**
@@ -321,9 +323,9 @@ public class MensajesUPModule extends org.iesapp.framework.pluggable.TopModuleWi
         jScrollPane1.setViewportView(jTable1);
         jTable1.setRowHeight(50);
 
-        String[] icons = new String[]{"/org/iesapp/framework/icons/delete.gif",
-            "/org/iesapp/modules/mensajesup/icons/clip.gif",
-            "/org/iesapp/framework/icons/blank.gif"};
+        Icon[] icons = new Icon[]{IconUtils.getDeleteIcon(),
+            IconUtils.getIconResource(getClass().getClassLoader(), "org/iesapp/modules/mensajesup/icons/clip.gif"),
+            IconUtils.getBlankIcon()};
 
         jTable1.getColumnModel().getColumn(4).setCellRenderer(new MyIconLabelRenderer(icons));
         jTable1.getColumnModel().getColumn(0).setCellRenderer(new MyIconButtonRenderer(icons));
@@ -391,9 +393,9 @@ public class MensajesUPModule extends org.iesapp.framework.pluggable.TopModuleWi
         jScrollPane3.setViewportView(jTable3);
         jTable3.setRowHeight(32);
 
-        String[] icons2 = new String[]{"/org/iesapp/framework/icons/back.gif",
-            "/org/iesapp/modules/mensajesup/icons/clip.gif",
-            "/org/iesapp/framework/icons/blank.gif"};
+        Icon[] icons2 = new Icon[]{IconUtils.getBackIcon(),
+            IconUtils.getIconResource(getClass().getClassLoader(), "org/iesapp/modules/mensajesup/icons/clip.gif"),
+            IconUtils.getBlankIcon()};
 
         jTable3.getColumnModel().getColumn(3).setCellRenderer(new MyIconLabelRenderer(icons2));
         jTable3.getColumnModel().getColumn(0).setCellRenderer(new MyIconButtonRenderer(icons2));
@@ -597,7 +599,7 @@ public class MensajesUPModule extends org.iesapp.framework.pluggable.TopModuleWi
 
         jOutlookBar1.addTab("Nou missatge", new javax.swing.ImageIcon(getClass().getResource("/org/iesapp/modules/mensajesup/icons/newmail.png")), jPanel4); // NOI18N
 
-        getContentContainer().add(jOutlookBar1, java.awt.BorderLayout.CENTER);
+        getContentContainer().add(jOutlookBar1, java.awt.BorderLayout.PAGE_START);
     }// </editor-fold>//GEN-END:initComponents
 
     //Send
