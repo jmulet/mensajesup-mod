@@ -300,8 +300,6 @@ public class MensajesUPModule extends org.iesapp.framework.pluggable.TopModuleWi
         });
         localToolbar1.add(jMensajesList);
 
-        getContentContainer().setLayout(new java.awt.BorderLayout());
-
         jPanel1.setLayout(new java.awt.CardLayout());
 
         modelTable1 = new javax.swing.table.DefaultTableModel(
@@ -599,7 +597,16 @@ public class MensajesUPModule extends org.iesapp.framework.pluggable.TopModuleWi
 
         jOutlookBar1.addTab("Nou missatge", new javax.swing.ImageIcon(getClass().getResource("/org/iesapp/modules/mensajesup/icons/newmail.png")), jPanel4); // NOI18N
 
-        getContentContainer().add(jOutlookBar1, java.awt.BorderLayout.PAGE_START);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentContainer());
+        getContentContainer().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jOutlookBar1)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jOutlookBar1)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     //Send
